@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Meenatchi Sriram | Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='po.css') }}">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Meenatchi Sriram</h2>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="main-content">
+    <section id="about">
+      <h2>About Me</h2>
+      <img src="{{ url_for('static', filename='images/profile.jpg') }}" width="200">
+      <p>I want to make things that make a difference.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p>Python Developer trainee at VETRI TECHNOLOGY SOLUTIONS</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        {% for project in projects %}
+          <div class="card">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+           
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Python</li>
+        <li>Flask</li>
+        <li>HTML, CSS, JavaScript</li>
+        <li>MySQL</li>
+        <li>Git & GitHub</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <p>B.E in Agricultural and Irrigation – Anna University</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email:dmeenatchi.365@gmail.com</p>
+      <p>Phone: 9655334515</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">Your Profile</a></p>
+    </section>
+  </div>
+</body>
+</html>
